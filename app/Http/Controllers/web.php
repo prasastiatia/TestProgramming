@@ -60,9 +60,16 @@ class web extends Controller
 
     public function edit($id)
     {
+        if(Session()->get('login')==TRUE)
+        {
         $sekolah = sekolah::all();
         $siswa = siswa::find($id);
         return view('siswa_edit', ['siswa' => $siswa,'sekolah'=>$sekolah]);
+        }
+        else
+        {
+        return redirect()->route('login');
+        }
     }
 
     public function update($id, Request $request)

@@ -11,8 +11,11 @@ use App\register;
 class AuthController extends Controller
 {
     public function getLogin()
-    {
-    	return view('login');
+    {   
+        if(Session()->get('login')==FALSE)
+        {
+        return view('login');
+        }
     }
 
     public function postLogin(Request $request)
@@ -42,7 +45,14 @@ class AuthController extends Controller
 
     public function getRegister()
     {
-    	return view('register');
+        if(Session()->get('login')==FALSE)
+        {
+        return view('register');
+        }
+        else
+        {
+        return redirect()->route('dashboard_user');
+        }
 
     }
 
