@@ -7,6 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Cara Penggunaan
+1. Install folder aplikasi ke dalam xampp.
+2. Start XAMPP, buka PHPMyAdmin, dan buat database dengan nama weblaravel.
+3. Import database weblaravel.sql pada folder aplikasi ke dalam database yang sebelumnya dibuat.
+4. Buka CMD dan arahkan ke dalam folder aplikasi. Lalu ketik PHP Artisan Serve.
+5. Jalankan aplikasi dengan url localhost:8000/login.
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
