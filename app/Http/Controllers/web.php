@@ -17,19 +17,32 @@ class web extends Controller
 
     public function dashboard()
     {
-        
+        if(Session()->get('login')==TRUE)
+        {
         return view('dashboard_user');
+        }
+        else
+        {
+        return redirect()->route('login');
+        }
 
     }
 
     public function data_siswa()
     {
-        
+
+        if(Session()->get('login')==TRUE)
+        {
         $data_sekolah = siswa::all();
         $sekolah = sekolah::all();
 
     
         return view('data_siswa',['sekolah'=>$sekolah,'data_sekolah'=>$data_sekolah]);
+        }
+        else
+        {
+        return redirect()->route('login');
+        }
     }
 
     public function postDataSiswa(Request $request)
@@ -77,7 +90,14 @@ class web extends Controller
 
     public function logicPerulangan()
     {
+        if(Session()->get('login')==TRUE)
+        {
         return view('logic');
+        }
+        else
+        {
+        return redirect()->route('login');
+        }
     }
 
     

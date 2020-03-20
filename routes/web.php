@@ -28,8 +28,8 @@ Route::get('/User/data_siswa/edit/{id}', 'web@edit')->name('edit_siswa');
 Route::put('/User/data_siswa/update/{id}', 'web@update');
 Route::get('/User/data_siswa/hapus/{id}', 'web@delete');
 
-Route::get('/User/logic_perulangan','web@logicPerulangan');
-Route::post('/User/logic_perulangan','web@logicPerulangan')->name('logic');
+Route::get('/User/logic_perulangan','web@logicPerulangan')->name('logic');
+
 
 Route::resource('data_siswa', 'Data_siswa');
 
